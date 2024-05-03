@@ -7,7 +7,7 @@ class Watchexec < Formula
 detects a matching event.
 "
   homepage ""
-  version "0.0.3"
+  version "0.0.4"
   license "MIT"
 
   depends_on "git"
@@ -15,16 +15,16 @@ detects a matching event.
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/hay-kot/watchexec/releases/download/v0.0.3/watchexec_Darwin_x86_64.tar.gz"
-      sha256 "7ff196bdaeb988d886a8064d192256ad8d7ef89b91695d98e13bd29ba02b1bef"
+      url "https://github.com/hay-kot/watchexec/releases/download/v0.0.4/watchexec_Darwin_x86_64.tar.gz"
+      sha256 "720ded63fcbd18e1b2c70606325c675ebb8c999c337a98d5ba13b6d59f089a6e"
 
       def install
         bin.install "watchexec"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/hay-kot/watchexec/releases/download/v0.0.3/watchexec_Darwin_arm64.tar.gz"
-      sha256 "f9cb83b72f59e9367f39188edf647e219f45f8be115ad90705f37f9f4543486c"
+      url "https://github.com/hay-kot/watchexec/releases/download/v0.0.4/watchexec_Darwin_arm64.tar.gz"
+      sha256 "d22ff8a8c9c633099e3dc06018c6921999a7304ee225679128a9967bbbd8dc61"
 
       def install
         bin.install "watchexec"
@@ -34,16 +34,16 @@ detects a matching event.
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/hay-kot/watchexec/releases/download/v0.0.3/watchexec_Linux_x86_64.tar.gz"
-      sha256 "c49f67f4e2719010b55061cf1868391f43b80e3277ff2d7f58ef2a5ed82b2b0c"
+      url "https://github.com/hay-kot/watchexec/releases/download/v0.0.4/watchexec_Linux_x86_64.tar.gz"
+      sha256 "c336ac1161b9a1528ddc1049df1c72aa388474829e82b55eb475878f3cdf1d6b"
 
       def install
         bin.install "watchexec"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/hay-kot/watchexec/releases/download/v0.0.3/watchexec_Linux_arm64.tar.gz"
-      sha256 "db33c41a53bad825881eb231ef9b73937e115471bed269e0945fb1ebec78e6d1"
+      url "https://github.com/hay-kot/watchexec/releases/download/v0.0.4/watchexec_Linux_arm64.tar.gz"
+      sha256 "5ad784f64e76324f0fa403ff5347e4d61bc286e2fce5909943e6bca051825d68"
 
       def install
         bin.install "watchexec"
