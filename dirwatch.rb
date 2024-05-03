@@ -7,7 +7,7 @@ class Dirwatch < Formula
 detects a matching event.
 "
   homepage ""
-  version "0.0.8"
+  version "0.0.9"
   license "MIT"
 
   depends_on "git"
@@ -15,16 +15,16 @@ detects a matching event.
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/hay-kot/dirwatch/releases/download/v0.0.8/dirwatch_Darwin_x86_64.tar.gz"
-      sha256 "d7822270bfd26786cd754039dbafc43823bf6371b9de890f142f9aaf52fddd4e"
+      url "https://github.com/hay-kot/dirwatch/releases/download/v0.0.9/dirwatch_Darwin_x86_64.tar.gz"
+      sha256 "d2c01c9b805d3a4bfd1d4a7792276a3c17c9dbd1095dfe5cb26fbec0f828e1e0"
 
       def install
         bin.install "dirwatch"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/hay-kot/dirwatch/releases/download/v0.0.8/dirwatch_Darwin_arm64.tar.gz"
-      sha256 "87ba3b274056c9c40dcb8bedfad43048d70ad0ea6f15c2a704a560c869337304"
+      url "https://github.com/hay-kot/dirwatch/releases/download/v0.0.9/dirwatch_Darwin_arm64.tar.gz"
+      sha256 "3a670059b1afc6e8ab6f372e99dc5dcebfc4a908f8fccffb4f1e56e57ca2ccb4"
 
       def install
         bin.install "dirwatch"
@@ -34,16 +34,16 @@ detects a matching event.
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/hay-kot/dirwatch/releases/download/v0.0.8/dirwatch_Linux_x86_64.tar.gz"
-      sha256 "0b7ee1a994e207ebe83ea0ff7aa094e10e63fd6e211a824a07ad43c0ec861d7a"
+      url "https://github.com/hay-kot/dirwatch/releases/download/v0.0.9/dirwatch_Linux_x86_64.tar.gz"
+      sha256 "8aac90c2bb0d54353a0633e101d23a875ec7d4f90710e798cab928f6b39694d2"
 
       def install
         bin.install "dirwatch"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/hay-kot/dirwatch/releases/download/v0.0.8/dirwatch_Linux_arm64.tar.gz"
-      sha256 "49832533ae452f67cd811a6422fadbd89a2dcf19e85ceb82f0dc823f6944ede3"
+      url "https://github.com/hay-kot/dirwatch/releases/download/v0.0.9/dirwatch_Linux_arm64.tar.gz"
+      sha256 "07a9569a6dbdcc2eaa13909f77bdd3ca98b361237ef240668b527bf7cdfd9b1c"
 
       def install
         bin.install "dirwatch"
@@ -52,8 +52,10 @@ detects a matching event.
   end
 
   service do
-    run [opt_bin/"dirwatch", "watch"]
+    run [opt_bin/"dirwatch", "--config", etc/"dirwatch.toml", "watch"]
     keep_alive true
+    error_log_path var/"log/dirwatch.log"
+    log_path var/"log/dirwatch.log"
   end
 
   test do
