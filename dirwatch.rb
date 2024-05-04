@@ -7,7 +7,7 @@ class Dirwatch < Formula
 detects a matching event.
 "
   homepage ""
-  version "0.0.11"
+  version "0.0.12"
   license "MIT"
 
   depends_on "git"
@@ -15,16 +15,16 @@ detects a matching event.
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/hay-kot/dirwatch/releases/download/v0.0.11/dirwatch_Darwin_x86_64.tar.gz"
-      sha256 "9cf4ba386bbf48290ae0db8a832ef8e15ab28dc19ffc214481a09b0e1c4f5e48"
+      url "https://github.com/hay-kot/dirwatch/releases/download/v0.0.12/dirwatch_Darwin_x86_64.tar.gz"
+      sha256 "7d447a0cfdf31b73b230e581b5f326a08ae5cd84e133d89e887325fae78d63b1"
 
       def install
         bin.install "dirwatch"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/hay-kot/dirwatch/releases/download/v0.0.11/dirwatch_Darwin_arm64.tar.gz"
-      sha256 "4233ce5cb8aefb8eeaa021df596fc0ba830c087f292ba22c9d2172f70ab354bf"
+      url "https://github.com/hay-kot/dirwatch/releases/download/v0.0.12/dirwatch_Darwin_arm64.tar.gz"
+      sha256 "ab831750be99ed25b2b152253499484bdaf90e9841a7f7b13bf1c19f9f83c03e"
 
       def install
         bin.install "dirwatch"
@@ -34,16 +34,16 @@ detects a matching event.
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/hay-kot/dirwatch/releases/download/v0.0.11/dirwatch_Linux_x86_64.tar.gz"
-      sha256 "b04cdc391482f5ade602fd094c18ad4e6a5d1531323686b6516103e5710d3e1f"
+      url "https://github.com/hay-kot/dirwatch/releases/download/v0.0.12/dirwatch_Linux_x86_64.tar.gz"
+      sha256 "c1b8752555a750b638ebcd58f59995a651420d497426793d1495b595e58cf708"
 
       def install
         bin.install "dirwatch"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/hay-kot/dirwatch/releases/download/v0.0.11/dirwatch_Linux_arm64.tar.gz"
-      sha256 "837a530571af499e862697f04be127caf1aac31e68243b99ef14d3f6f31f4a0b"
+      url "https://github.com/hay-kot/dirwatch/releases/download/v0.0.12/dirwatch_Linux_arm64.tar.gz"
+      sha256 "aab43082517d7c131d80385aeac1fa6150d9a69a0af72c8a3198dcf7e89602b9"
 
       def install
         bin.install "dirwatch"
